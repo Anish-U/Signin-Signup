@@ -8,9 +8,9 @@ TASKS:
 -> Logout Page
 
 FUNCTIONALITIES:
--> Secure Login
--> Session Expiry ( 15 mins )
--> Change Password
+-> Secure Login (Taken in care of SQL injection and one time login activity)
+-> Session Expiry ( Auto logout after 15 mins of inactivity )
+-> SEO Friendly URL's (Used SEO friendly URL's like login insteadd of login.php)
 
 TECHNOLOGIES TO BE USED:
 -> HTML, CSS (SASS), JS, Bootstrap
