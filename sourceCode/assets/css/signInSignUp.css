@@ -1,1 +1,162 @@
-/* No CSS *//*# sourceMappingURL=signInSignUp.css.map */
+/* Fonts Link */
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Color Variables */
+/* Mixins for Responsivity */
+/* Animation Variables */
+@-webkit-keyframes jump {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+}
+@keyframes jump {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.main .left__img {
+  animation: jump 1s ease-in-out 0s infinite alternate-reverse;
+}
+
+@media (max-width: 900px) {
+  .main .left {
+    display: none;
+  }
+}
+
+.main .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .main .right {
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.main .right .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.main .right .form__title {
+  font-size: 3rem;
+  font-family: 'Andika New Basic', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 700;
+  color: #014073;
+}
+
+@media (max-width: 900px) {
+  .main .right .form__title {
+    font-size: 2.5em;
+  }
+}
+
+.main .right .form__desc {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .main .right .form__desc {
+    font-size: 1em;
+  }
+}
+
+.main .right .form__loginForm input,
+.main .right .form__loginForm button {
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  margin: 10px;
+}
+
+@media (max-width: 900px) {
+  .main .right .form__loginForm input,
+  .main .right .form__loginForm button {
+    font-size: 0.8em;
+  }
+}
+
+.main .right .form__loginForm input {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e6e6e6;
+  border-radius: 16px;
+  color: #333;
+  letter-spacing: 0.5px;
+  padding: 14px 64px;
+}
+
+@media (max-width: 900px) {
+  .main .right .form__loginForm input {
+    padding: 10px 44px;
+  }
+}
+
+.main .right .form__loginForm__submit {
+  color: #fff;
+  background-color: #79a8c2;
+  padding: 10px 44px;
+  margin: 22px auto;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .main .right .form__loginForm__submit {
+    font-size: 1em;
+    padding: 10px 34px;
+  }
+}
+
+.main .right .form__loginForm__signup {
+  text-decoration: none;
+  color: #014073;
+}
+/*# sourceMappingURL=signInSignUp.css.map */

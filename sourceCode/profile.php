@@ -4,7 +4,7 @@ include('./php_includes/nav.php');
 
 ?>
 
-Home Page
+Profile Page
 
 <?php 
 

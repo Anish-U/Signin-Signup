@@ -1,1 +1,163 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+/* Fonts Link */
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Color Variables */
+/* Mixins for Responsivity */
+.sidebar {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #026abf;
+  color: #ffffff;
+  -webkit-transition: width 500ms;
+  transition: width 500ms;
+}
+
+.sidebar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding: 0rem 1rem;
+}
+
+.sidebar__menu {
+  padding: 1rem;
+}
+
+.sidebar__menu li {
+  list-style: none;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar__menu li a {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.sidebar__menu li a span:last-child {
+  padding-left: .6rem;
+}
+
+.main {
+  position: relative;
+  margin-left: 240px;
+  -webkit-transition: margin-left 500ms;
+  transition: margin-left 500ms;
+}
+
+.main header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: calc(100% - 240px);
+  background: #fff;
+  height: 60px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0rem 1rem;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 900px) {
+  .main header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0rem 10px;
+    width: 100%;
+  }
+}
+
+.main header h2 {
+  font-size: 30px;
+  font-weight: 400;
+  color: #014073;
+}
+
+@media (max-width: 900px) {
+  .main header h2 {
+    font-size: 15px;
+  }
+}
+
+.main header a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .main header a {
+    display: none;
+  }
+}
+
+.main header a:hover {
+  color: #014073;
+}
+
+.main main {
+  margin-top: 60px;
+  background: #f1f5f9;
+  min-height: 90vh;
+  padding: 1rem;
+  font-family: 'Andika New Basics', sans-serif;
+}
+
+#sidebar__toggle {
+  display: none;
+}
+
+#sidebar__toggle:checked ~ .sidebar {
+  width: 60px;
+}
+
+#sidebar__toggle:checked ~ .main {
+  margin-left: 60px;
+}
+
+#sidebar__toggle:checked ~ .sidebar .sidebar__header h3,
+#sidebar__toggle:checked ~ .sidebar li span:last-child {
+  display: none;
+}
+
+#sidebar__toggle:checked ~ .sidebar .sidebar__header,
+#sidebar__toggle:checked ~ .sidebar li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,142 @@
+/* Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Variables */
+$colors: (
+  primary: #014073,
+  secondary: #b1cbdc
+);
+
+@function color($colorname) {
+  @return map-get($colors, $colorname);
+}
+
+/* Mixins for Responsivity */
+$mobile: 900px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+/* Animation Variables */
+@keyframes jump {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+body{
+  overflow: hidden;
+}
+
+.main {
+  overflow: hidden;
+  
+  .left {
+    &__img {
+      animation: jump 1s ease-in-out 0s infinite alternate-reverse;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      margin: auto;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      &__title {
+        font-size: 3rem;
+        font-family: 'Andika New Basic', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 700;
+        color: color(primary);
+        
+        @include mobile {
+          font-size: 2.5em;
+        }
+      }
+
+      &__desc {
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 40px;
+        text-align: center;
+        
+        @include mobile {
+          font-size: 1em;
+        }
+      }
+
+      &__loginForm {
+
+        input,
+        button {
+          border: none;
+          outline: none;
+          font-size: 1.1em;
+          margin: 10px;
+
+          @include mobile {
+            font-size: 0.8em;
+          }
+        }
+        
+        input {
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+          background: #e6e6e6;
+          border-radius: 16px;
+          color: #333;
+          letter-spacing: 0.5px;
+          padding: 14px 64px;
+          
+          @include mobile {
+            padding: 10px 44px;
+          }
+        }
+
+        &__submit {
+          color: #fff;
+          background-color: #79a8c2;
+          padding: 10px 44px;
+          margin: 22px auto;
+          cursor: pointer;
+          
+          @include mobile {
+            font-size: 1em;
+            padding: 10px 34px;
+          }
+        }
+        &__signup {
+          text-decoration: none;
+          color: color(primary);
+        }
+      }
+    }
+  }
+}

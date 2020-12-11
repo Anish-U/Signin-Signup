@@ -1,0 +1,153 @@
+/* Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Variables */
+$colors: (
+  primary: #014073,
+  primary-light: lighten(#014073,15%),
+  secondary: #b1cbdc
+);
+
+@function color($colorname) {
+  @return map-get($colors, $colorname);
+}
+
+/* Mixins for Responsivity */
+$mobile: 900px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+.sidebar {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: color(primary-light);
+  color: #ffffff;
+  transition: width 500ms;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+  }
+
+  &__menu {
+    padding: 1rem;
+    
+    li {
+      list-style: none;
+      margin-bottom: 1.2rem;
+    
+      a {
+        color: #ffffff;
+        font-size: 0.9rem;
+        text-decoration: none;
+
+        span:last-child {
+          padding-left: .6rem;
+        }
+      }
+    }
+  }
+}
+.main {
+  position: relative;
+  margin-left: 240px;
+  transition: margin-left 500ms;
+  
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: calc(100% - 240px);
+    background: #fff;
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0rem 1rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @include mobile {
+      display: flex;
+      justify-content: space-between;
+      padding: 0rem 10px ;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 400;
+      color: color(primary);
+
+      @include mobile {
+        font-size: 15px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    a:hover {
+      color: color(primary);
+    }
+
+  }
+
+  main {
+    margin-top: 60px;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem;
+    font-family: 'Andika New Basics', sans-serif;
+
+    
+  }
+}
+
+#sidebar__toggle {
+  display: none;
+}
+
+#sidebar__toggle:checked ~ .sidebar {
+  width: 60px;
+}
+
+#sidebar__toggle:checked ~ .main {
+  margin-left: 60px;
+}
+
+#sidebar__toggle:checked ~ .sidebar .sidebar__header h3,
+#sidebar__toggle:checked ~ .sidebar li span:last-child {
+  display: none;
+}
+
+#sidebar__toggle:checked ~ .sidebar .sidebar__header,
+#sidebar__toggle:checked ~ .sidebar li  {
+  display: flex;
+  justify-content: center;
+}
