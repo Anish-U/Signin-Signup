@@ -1,3 +1,13 @@
+<?php
+
+  session_start();
+  include ('./php_includes/database.inc.php');
+  include ('./php_includes/functions.inc.php');
+  if(!isset($_SESSION['SUCCESS'])) {
+    redirect('./login');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,19 +48,19 @@
       <div class="sidebar__menu">
         <ul>
           <li>
-            <a href="./index.php">
+            <a href="./index">
               <span class="ti-home"></span>
               <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="./profile.php">
+            <a href="./profile">
               <span class="ti-folder"></span>
               <span>Profile</span>
             </a>
           </li>
           <li>
-            <a href="./logout.php">
+            <a href="./logout">
               <span class="ti-settings"></span>
               <span>Logout</span>
             </a>
@@ -60,7 +70,7 @@
     </div>
     <div class="main">
       <header>
-        <h2 class="main__heading">Welcome User !</h2>
-        <a href="./logout.php">Logout</a>
+        <h2 class="main__heading">Welcome <?php echo strtoupper($_SESSION['USER']); ?> !</h2>
+        <a href="./logout">Logout</a>
       </header>
       <main>

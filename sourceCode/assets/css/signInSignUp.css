@@ -159,4 +159,10 @@ body {
   text-decoration: none;
   color: #014073;
 }
+
+.error_msg {
+  color: red;
+  margin-top: 10px;
+  padding: 5px;
+}
 /*# sourceMappingURL=signInSignUp.css.map */

@@ -1,3 +1,24 @@
+<?php
+
+  include ('./php_includes/database.inc.php');
+  include ('./php_includes/functions.inc.php');
+  $msg = '';
+  $name = '';
+  $email = '';
+  $password = '';
+
+  if(isset($_POST['submit'])){
+    $email = get_safe_value($_POST['email']);
+    $password = MD5(get_safe_value($_POST['password']));
+    $name = get_safe_value($_POST['name']);
+
+    mysqli_query($con,"insert into users (name,email,password) values ('$name','$email','$password')");
+
+    redirect('./login');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Page Title -->
-    <title>Login Page</title>
+    <title>Sign Up Page</title>
   </head>
   <body>
     <div class="main">
@@ -34,18 +55,18 @@
             <div class="form">
               <p class="form__title">Create an Account !</p>
               <p class="form__desc">Please, provide details to create an account.</p>
-              <form class="form__loginForm">
+              <form class="form__loginForm" method="post">
                 <div class="form-group">
-                  <input type="email" placeholder="Email Address" class="form-control" name="email">
+                  <input type="email" placeholder="Email Address" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Name" class="form-control" name="name">
+                  <input type="text" placeholder="Name" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control" name="password">
+                  <input type="password" placeholder="Password" class="form-control" name="password" required>
                 </div>
-                <button class="form__loginForm__submit btn">Sign Up</button>
-                <br><a href="./login.html" class="form__loginForm__signup">Already a User? Log in</a>
+                <button name="submit" class="form__loginForm__submit btn">Sign Up</button>
+                <br><a href="./login" class="form__loginForm__signup">Already a User? Log in</a>
             </form>
             </div>
           </div>
