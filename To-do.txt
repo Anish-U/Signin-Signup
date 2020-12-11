@@ -1,0 +1,17 @@
+SIGN-UP AND SIGN-IN WITH DASHBOARD
+
+TASKS:
+-> Signup Page
+-> Signin Page
+-> User Dashboard Page
+-> Profile Page
+-> Logout Page
+
+FUNCTIONALITIES:
+-> Secure Login
+-> Session Expiry ( 15 mins )
+-> Change Password
+
+TECHNOLOGIES TO BE USED:
+-> HTML, CSS (SASS), JS, Bootstrap
+-> PHP, MySQL
