@@ -3,10 +3,7 @@
   session_start();
   include ('./php_includes/database.inc.php');
   include ('./php_includes/functions.inc.php');
-  if(!isset($_SESSION['SUCCESS'])) {
-    redirect('./login');
-  }
-
+  require ('./php_includes/user.auth.php');  
 ?>
 <!DOCTYPE html>
 <html lang="en">
